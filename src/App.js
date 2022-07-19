@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Pages/Shared/Header/Header';
 import AddItem from './Pages/POS_Modules/AddItem/AddItem';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
       <AddItem></AddItem>
 
       
-      
+      <ToastContainer />
     </div>
   );
 }

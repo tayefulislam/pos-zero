@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {  toast } from 'react-toastify';
 const AddItem = () => {
 
 
@@ -7,7 +7,38 @@ const AddItem = () => {
 
     const handleSubmit =(event)=>{
 
-        event.preventDeafult()
+        event.preventDefault()
+
+        const itemName=event.target.itemname.value;
+        const image=event.target.image.value;
+        const details=event.target.details.value;
+        const vat=parseInt(event.target.vat.value);
+        const quantity=parseInt(event.target.quantity.value);
+        const unitPrice =parseInt(event.target.unitprice.value)
+
+        const item={itemName,image,details,vat,quantity,unitPrice}
+
+        console.log(item)
+
+
+        const url = `http://localhost:9000/additem`
+
+        fetch(url,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(item)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+
+            if(data.insertedId){
+                toast.success('Item Added')
+            }
+        })
+       
 
     }
 
