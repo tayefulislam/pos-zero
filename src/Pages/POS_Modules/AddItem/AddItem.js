@@ -36,6 +36,7 @@ const AddItem = () => {
 
             if(data.insertedId){
                 toast.success('Item Added')
+                event.target.reset()
             }
         })
        

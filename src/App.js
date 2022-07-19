@@ -4,7 +4,9 @@ import './App.css';
 import Header from './Pages/Shared/Header/Header';
 import AddItem from './Pages/POS_Modules/AddItem/AddItem';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Routes, Route, Link } from "react-router-dom";
+
 
 function App() {
   return (
@@ -12,7 +14,11 @@ function App() {
 
       <Header></Header>
 
-      <AddItem></AddItem>
+      <Routes>
+
+        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+
+      </Routes>
 
       
       <ToastContainer />

@@ -1,10 +1,10 @@
 import React from 'react';
-
+import {  Link } from "react-router-dom";
 const Header = () => {
 
 
     const manu = <>
-     <li><a>Add A Product</a></li>
+     <li><Link to='addItem'>Add A Product</Link></li>
     </>
 
     return (
@@ -21,7 +21,7 @@ const Header = () => {
               
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-xl">POS Zero</a>
+          <Link to='/' class="btn btn-ghost normal-case text-xl">POS Zero</Link>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
