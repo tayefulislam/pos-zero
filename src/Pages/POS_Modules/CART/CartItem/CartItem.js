@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({cartItem}) => {
+const CartItem = ({cartItem,handleDeleteItem}) => {
     console.log(cartItem)
     return (
         <div className='flex items-center'>
@@ -18,7 +18,7 @@ const CartItem = ({cartItem}) => {
                 <h1 className='mx-2 font-extrabold text-2xl'>+</h1>
           
 
-           <h1 className='mx-2 text-red-500 font-semibold'>X</h1>
+           <h1 onClick={()=>handleDeleteItem(cartItem)} className='mx-2 text-red-500 font-semibold'>X</h1>
             
             
         </div>

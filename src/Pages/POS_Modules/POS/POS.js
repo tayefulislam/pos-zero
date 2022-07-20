@@ -38,10 +38,22 @@ if(!itemCheck){
 else{
     toast.error("Item Already In Cart")
 }
-   
-
 
 }
+
+// handle delete item
+
+
+const handleDeleteItem=(cartItem)=>{
+
+    const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
+
+    console.log(deleteItem)
+    setCarts(deleteItem)
+
+}
+
+// 
 
 
 
@@ -74,6 +86,7 @@ else{
                     carts?.map((cartItem,index)=><CartItem
                     key={index}
                     cartItem={cartItem}
+                    handleDeleteItem={handleDeleteItem}
                     
                     ></CartItem>)
                   }
