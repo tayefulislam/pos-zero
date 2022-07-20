@@ -6,12 +6,19 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter> 
-   <React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+  <React.StrictMode>
   <App />
 </React.StrictMode>
+  </QueryClientProvider>
+   
 </BrowserRouter>
 
 

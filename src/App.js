@@ -6,6 +6,7 @@ import AddItem from './Pages/POS_Modules/AddItem/AddItem';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, Link } from "react-router-dom";
+import POS from './Pages/POS_Modules/POS/POS';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
 
       <Header></Header>
+      <POS></POS>
 
       <Routes>
 
