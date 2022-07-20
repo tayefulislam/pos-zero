@@ -13,10 +13,13 @@ const AddItem = () => {
         const image=event.target.image.value;
         const details=event.target.details.value;
         const vat=parseInt(event.target.vat.value);
-        const quantity=parseInt(event.target.quantity.value);
+        const availableQuantity=parseInt(event.target.quantity.value);
         const unitPrice =parseInt(event.target.unitprice.value)
+        
 
-        const item={itemName,image,details,vat,quantity,unitPrice}
+        const item={itemName,image,details,vat,availableQuantity,unitPrice,
+            quantity:1,
+            total:unitPrice+(vat/100)*unitPrice}
 
         console.log(item)
 
