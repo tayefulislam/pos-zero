@@ -62,8 +62,13 @@ const handleIncrease =(cartItem)=>{
     console.log(cartItem)
     const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
 
-    cartItem.quantity=cartItem.quantity -1;
-    cartItem.total= cartItem.quantity * cartItem.unitPrice+(cartItem.vat/100)*cartItem.unitPrice;
+    cartItem.quantity=cartItem.quantity +1;
+
+    const totalprice =cartItem.quantity *cartItem.unitPrice
+    console.log(totalprice)
+
+    cartItem.total= cartItem.vat/1000*totalprice+totalprice
+    console.log(cartItem.total)
 
     //unitPrice+(vat/100)*unitPrice
 
@@ -79,7 +84,12 @@ const handleDecrease =(cartItem)=>{
     const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
 
     cartItem.quantity=cartItem.quantity -1;
-    cartItem.total= cartItem.quantity * cartItem.unitPrice+(cartItem.vat/100)*cartItem.unitPrice;
+
+    const totalprice =cartItem.quantity *cartItem.unitPrice
+    console.log(totalprice)
+
+    cartItem.total= cartItem.vat/1000*totalprice+totalprice
+    console.log(cartItem.total)
 
     //unitPrice+(vat/100)*unitPrice
 

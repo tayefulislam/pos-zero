@@ -14,7 +14,11 @@ const CartItem = ({cartItem,handleDeleteItem,handleIncrease,handleDecrease}) => 
                 
                 
                 <h1>{cartItem.quantity}</h1>
+                
                 <h1 onClick={()=>handleIncrease(cartItem)} className='mx-2 font-extrabold text-2xl'>+</h1>
+
+                <h1 className='mx-2'> Vat: {cartItem.vat} %</h1>
+                <h1 className='mx-2'> Total: {cartItem.total}</h1>
           
 
            <h1 onClick={()=>handleDeleteItem(cartItem)} className='mx-2 text-red-500 font-semibold'>X</h1>
