@@ -3,7 +3,7 @@ import React from 'react';
 const Item = ({item,handleAddToCart}) => {
 
 
-    console.log(item)
+    // console.log(item)
 
     const {_id:id,itemName,unitPrice,vat}=item
 

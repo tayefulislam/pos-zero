@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartItem = ({cartItem,handleDeleteItem}) => {
+const CartItem = ({cartItem,handleDeleteItem,handleIncrease,handleDecrease}) => {
     console.log(cartItem)
     return (
         <div className='flex items-center'>
@@ -9,13 +9,12 @@ const CartItem = ({cartItem,handleDeleteItem}) => {
 
             <h1>{cartItem?.itemName}</h1>
             
-                <p className='mx-2 font-extrabold text-2xl'>-</p>
+                <p onClick={()=>handleDecrease(cartItem)} className='mx-2 font-extrabold text-2xl'>-</p>
 
                 
-                <input type="number"
-                                
-                                className="input input-bordered input-success  max-w-xs" />
-                <h1 className='mx-2 font-extrabold text-2xl'>+</h1>
+                
+                <h1>{cartItem.quantity}</h1>
+                <h1 onClick={()=>handleIncrease(cartItem)} className='mx-2 font-extrabold text-2xl'>+</h1>
           
 
            <h1 onClick={()=>handleDeleteItem(cartItem)} className='mx-2 text-red-500 font-semibold'>X</h1>

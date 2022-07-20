@@ -26,7 +26,6 @@ const [carts,setCarts]=useState([])
 //handle to addtocart
 
 
-
 const handleAddToCart=(item)=>{
 
     const itemCheck=carts.find(cart =>cart._id === item._id)
@@ -48,12 +47,48 @@ const handleDeleteItem=(cartItem)=>{
 
     const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
 
-    console.log(deleteItem)
+    // console.log(deleteItem)
     setCarts(deleteItem)
 
 }
 
 // 
+
+
+//handle increare
+
+const handleIncrease =(cartItem)=>{
+
+    console.log(cartItem)
+    const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
+
+    cartItem.quantity=cartItem.quantity -1;
+    cartItem.total= cartItem.quantity * cartItem.unitPrice+(cartItem.vat/100)*cartItem.unitPrice;
+
+    //unitPrice+(vat/100)*unitPrice
+
+    const newCart = [...deleteItem, cartItem];
+                setCarts(newCart)
+
+    
+
+}
+const handleDecrease =(cartItem)=>{
+
+    console.log(cartItem)
+    const deleteItem = carts.filter(cart=>cart._id !== cartItem._id)
+
+    cartItem.quantity=cartItem.quantity -1;
+    cartItem.total= cartItem.quantity * cartItem.unitPrice+(cartItem.vat/100)*cartItem.unitPrice;
+
+    //unitPrice+(vat/100)*unitPrice
+
+    const newCart = [...deleteItem, cartItem];
+                setCarts(newCart)
+
+    
+
+}
 
 
 
@@ -71,6 +106,8 @@ const handleDeleteItem=(cartItem)=>{
                         key={item._id}
                         item={item}
                         handleAddToCart={handleAddToCart}
+
+
                         ></Item>)
                     }
 
@@ -87,6 +124,9 @@ const handleDeleteItem=(cartItem)=>{
                     key={index}
                     cartItem={cartItem}
                     handleDeleteItem={handleDeleteItem}
+                    handleIncrease={handleIncrease}
+                    handleDecrease={handleDecrease}
+                    
                     
                     ></CartItem>)
                   }
