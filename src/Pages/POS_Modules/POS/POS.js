@@ -21,6 +21,7 @@ const POS = () => {
 
 
 const [carts,setCarts]=useState([])
+const [subTotal,setSubTotal]=useState(0)
 
 
 //handle to addtocart
@@ -74,6 +75,7 @@ const handleIncrease =(cartItem)=>{
 
     const newCart = [...deleteItem, cartItem];
                 setCarts(newCart)
+                
 
     
 
@@ -95,10 +97,25 @@ const handleDecrease =(cartItem)=>{
 
     const newCart = [...deleteItem, cartItem];
                 setCarts(newCart)
+                
 
     
 
 }
+
+
+
+
+
+
+// function subTotalSet(){
+
+//     for(let cart of carts){
+// const newTotal = subTotal + cart.total;
+// setSubTotal(newTotal)
+
+//     }
+// }
 
 
 
@@ -130,7 +147,8 @@ const handleDecrease =(cartItem)=>{
                     <h1>Cart Details</h1>
 
                   {
-                    carts?.map((cartItem,index)=><CartItem
+                    carts?.map((cartItem,index)=><>
+                    <CartItem
                     key={index}
                     cartItem={cartItem}
                     handleDeleteItem={handleDeleteItem}
@@ -138,9 +156,28 @@ const handleDecrease =(cartItem)=>{
                     handleDecrease={handleDecrease}
                     
                     
-                    ></CartItem>)
-                  }
+                    ></CartItem>
                     
+                    
+                        
+                    
+
+
+                    </>)
+                  }
+
+
+                  <div >
+                    <div className='flex justify-between'>
+                        <p>Sub Total</p>
+                        <p>{subTotal}</p>
+                        </div>
+
+                    
+                  </div>
+
+
+            
 
 
                 </div>
@@ -148,6 +185,9 @@ const handleDecrease =(cartItem)=>{
 
 
             </div>
+
+
+            
 
 
             
