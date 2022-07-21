@@ -4,7 +4,7 @@ const Header = () => {
 
 
     const manu = <>
-     <li><Link to='addItem'>Add A Product</Link></li>
+     <li><Link to='addItem'>Add A Item</Link></li>
     </>
 
     return (

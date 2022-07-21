@@ -9,7 +9,7 @@ import CartItem from '../CART/CartItem/CartItem';
 const POS = () => {
 
 
-    const url =`http://localhost:9000/items`
+    const url =`https://gentle-waters-14096.herokuapp.com/items`
     const { isLoading, error, data } = useQuery(['items'], () =>
     fetch(url).then(res =>
       res.json()

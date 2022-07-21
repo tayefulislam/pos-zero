@@ -24,7 +24,7 @@ const AddItem = () => {
         console.log(item)
 
 
-        const url = `http://localhost:9000/additem`
+        const url = `https://gentle-waters-14096.herokuapp.com/additem`
 
         fetch(url,{
             method:"POST",
